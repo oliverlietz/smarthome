@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.eclipse.smarthome.karaf</groupId>
+  <artifactId>org.eclipse.smarthome.karaf.features</artifactId>
+  <version>0.8.0-SNAPSHOT</version>
+  <packaging>feature</packaging>
+
+  <name>Eclipse SmartHome Karaf Features</name>
+  <description>Eclipse SmartHome Features for provisioning with Apache Karaf</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <org.eclipse.smarthome.version>${project.version}</org.eclipse.smarthome.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.karaf.tooling</groupId>
+        <artifactId>karaf-maven-plugin</artifactId>
+        <version>4.0.0.M2</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

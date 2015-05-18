@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="eclipse-smarthome" xmlns="http://karaf.apache.org/xmlns/features/v1.3.0">
+  <!-- eclipse-smarthome -->
+  <feature name="eclipse-smarthome" version="${org.eclipse.smarthome.version}">
+    <!-- core -->
+    <bundle>mvn:org.eclipse.smarthome.core/org.eclipse.smarthome.core/${org.eclipse.smarthome.version}</bundle>
+    <bundle>mvn:org.eclipse.smarthome.core/org.eclipse.smarthome.core.autoupdate/${org.eclipse.smarthome.version}</bundle>
+    <bundle>mvn:org.eclipse.smarthome.core/org.eclipse.smarthome.core.binding.xml/${org.eclipse.smarthome.version}</bundle>
+    <bundle>mvn:org.eclipse.smarthome.core/org.eclipse.smarthome.core.library/${org.eclipse.smarthome.version}</bundle>
+    <bundle>mvn:org.eclipse.smarthome.core/org.eclipse.smarthome.core.persistence/${org.eclipse.smarthome.version}</bundle>
+    <bundle>mvn:org.eclipse.smarthome.core/org.eclipse.smarthome.core.scheduler/${org.eclipse.smarthome.version}</bundle>
+    <bundle>mvn:org.eclipse.smarthome.core/org.eclipse.smarthome.core.thing/${org.eclipse.smarthome.version}</bundle>
+    <bundle>mvn:org.eclipse.smarthome.core/org.eclipse.smarthome.core.thing.xml/${org.eclipse.smarthome.version}</bundle>
+    <bundle>mvn:org.eclipse.smarthome.core/org.eclipse.smarthome.core.transform/${org.eclipse.smarthome.version}</bundle>
+    <!-- config -->
+    <bundle>mvn:org.eclipse.smarthome.config/org.eclipse.smarthome.config.core/${org.eclipse.smarthome.version}</bundle>
+    <bundle>mvn:org.eclipse.smarthome.config/org.eclipse.smarthome.config.xml/${org.eclipse.smarthome.version}</bundle>
+    <!-- io -->
+    <bundle>mvn:org.eclipse.smarthome.io/org.eclipse.smarthome.io.console/${org.eclipse.smarthome.version}</bundle>
+    <bundle>mvn:org.eclipse.smarthome.io/org.eclipse.smarthome.io.net/${org.eclipse.smarthome.version}</bundle>
+    <!-- dependencies -->
+    <feature>eventadmin</feature>
+    <feature>http</feature>
+    <feature>scr</feature>
+    <bundle dependency="true">mvn:com.google.guava/guava/14.0</bundle>
+    <bundle dependency="true">mvn:commons-codec/commons-codec/1.9</bundle>
+    <bundle dependency="true">mvn:commons-collections/commons-collections/3.2.1</bundle>
+    <bundle dependency="true">mvn:commons-io/commons-io/2.4</bundle>
+    <bundle dependency="true">mvn:commons-lang/commons-lang/2.6</bundle>
+    <bundle dependency="true">mvn:commons-net/commons-net/3.3</bundle>
+    <bundle dependency="true">mvn:org.apache.commons/commons-exec/1.3</bundle>
+    <bundle dependency="true">mvn:org.apache.geronimo.bundles/commons-httpclient/3.1_2</bundle>
+    <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xstream/1.4.8_1</bundle>
+  </feature>
+  <!-- eclipse-smarthome-config-* -->
+  <feature name="eclipse-smarthome-config-discovery" version="${org.eclipse.smarthome.version}">
+    <bundle>mvn:org.eclipse.smarthome.config/org.eclipse.smarthome.config.discovery/${org.eclipse.smarthome.version}</bundle>
+    <!-- dependencies -->
+    <feature>eclipse-smarthome</feature>
+  </feature>
+  <feature name="eclipse-smarthome-config-dispatch" version="${org.eclipse.smarthome.version}">
+    <bundle>mvn:org.eclipse.smarthome.config/org.eclipse.smarthome.config.dispatch/${org.eclipse.smarthome.version}</bundle>
+    <!-- dependencies -->
+    <feature>eclipse-smarthome</feature>
+  </feature>
+  <!-- eclipse-smarthome-io-* -->
+  <feature name="eclipse-smarthome-io-monitor" version="${org.eclipse.smarthome.version}">
+    <bundle>mvn:org.eclipse.smarthome.io/org.eclipse.smarthome.io.monitor/${org.eclipse.smarthome.version}</bundle>
+    <!-- dependencies -->
+    <feature>eclipse-smarthome</feature>
+  </feature>
+  <feature name="eclipse-smarthome-io-multimedia" version="${org.eclipse.smarthome.version}">
+    <bundle>mvn:org.eclipse.smarthome.io/org.eclipse.smarthome.io.multimedia/${org.eclipse.smarthome.version}</bundle>
+    <!-- dependencies -->
+    <feature>eclipse-smarthome</feature>
+  </feature>
+  <feature name="eclipse-smarthome-io-rest" version="${org.eclipse.smarthome.version}">
+    <bundle>mvn:org.eclipse.smarthome.io/org.eclipse.smarthome.io.rest/${org.eclipse.smarthome.version}</bundle>
+    <bundle>mvn:org.eclipse.smarthome.io/org.eclipse.smarthome.io.rest.core/${org.eclipse.smarthome.version}</bundle>
+    <!-- TODO dedicated feature for SSE? <bundle>mvn:org.eclipse.smarthome.io/org.eclipse.smarthome.io.rest.sse/${org.eclipse.smarthome.version}</bundle> -->
+    <!-- dependencies -->
+    <feature>eclipse-smarthome</feature>
+    <feature>eclipse-smarthome-config-discovery</feature>
+    <bundle dependency="true">mvn:com.google.code.gson/gson/2.3.1</bundle>
+    <bundle dependency="true">mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jsr339-api-2.0/2.5.0</bundle>
+  </feature>
+  <!-- eclipse-smarthome-io-transport-* -->
+  <feature name="eclipse-smarthome-io-transport-mdns" version="${org.eclipse.smarthome.version}">
+    <bundle>mvn:org.eclipse.smarthome.io/org.eclipse.smarthome.io.transport.mdns/${org.eclipse.smarthome.version}</bundle>
+    <!-- dependencies -->
+    <feature>eclipse-smarthome</feature>
+    <feature>eclipse-smarthome-config-discovery</feature>
+  </feature>
+  <feature name="eclipse-smarthome-io-transport-mqtt" version="${org.eclipse.smarthome.version}">
+    <bundle>mvn:org.eclipse.smarthome.io/org.eclipse.smarthome.io.transport.mqtt/${org.eclipse.smarthome.version}</bundle>
+    <!-- dependencies -->
+    <feature>eclipse-smarthome</feature>
+  </feature>
+  <feature name="eclipse-smarthome-io-transport-upnp" version="${org.eclipse.smarthome.version}">
+    <bundle>mvn:org.eclipse.smarthome.io/org.eclipse.smarthome.io.transport.upnp/${org.eclipse.smarthome.version}</bundle>
+    <!-- dependencies -->
+    <feature>eclipse-smarthome</feature>
+    <bundle dependency="true">mvn:org.jupnp.bundles/org.jupnp/2.0.0-SNAPSHOT</bundle>
+    <bundle dependency="true">mvn:org.apache.httpcomponents/httpcore-osgi/4.4.1</bundle>
+    <bundle dependency="true">mvn:org.apache.httpcomponents/httpclient-osgi/4.4.1</bundle>
+  </feature>
+  <feature name="eclipse-smarthome-ui" version="${org.eclipse.smarthome.version}">
+    <!-- TODO -->
+    <bundle>mvn:org.eclipse.smarthome/org.eclipse.smarthome.ui/${org.eclipse.smarthome.version}</bundle>
+    <!-- dependencies -->
+    <feature>eclipse-smarthome</feature>
+    <bundle dependency="true">mvn:org.eclipse.emf/org.eclipse.emf.common/2.10.1</bundle>
+    <bundle dependency="true">mvn:org.eclipse.emf/org.eclipse.emf.ecore/2.10.1</bundle>
+    <bundle dependency="true">mvn:org.eclipse.smarthome.model/org.eclipse.smarthome.model.core/${org.eclipse.smarthome.version}</bundle>
+    <bundle dependency="true">mvn:com.google.inject/guice/4.0</bundle>
+    <bundle dependency="true">mvn:com.google.guava/guava/18.0</bundle>
+    <bundle dependency="true">mvn:org.eclipse.equinox/org.eclipse.equinox.common/3.6.0</bundle>
+    <bundle dependency="true">mvn:org.eclipse.equinox/org.eclipse.equinox.registry/3.5.101</bundle>
+    <bundle dependency="true">mvn:org.eclipse.osgi/org.eclipse.osgi/3.7.1</bundle>
+    <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.aopalliance/1.0_6</bundle>
+    <bundle dependency="true">mvn:org.eclipse.xtext/org.eclipse.xtext.common.types/2.8.2</bundle>
+  </feature>
+  <!-- eclipse-smarthome-io-protocol-* -->
+  <feature name="eclipse-smarthome-protocol-enocean" version="${org.eclipse.smarthome.version}">
+    <bundle>mvn:org.eclipse.smarthome.protocols.enocean/org.eclipse.smarthome.protocols.enocean.eeps.basic/${org.eclipse.smarthome.version}</bundle>
+    <bundle>mvn:org.eclipse.smarthome.protocols.enocean/org.eclipse.smarthome.protocols.enocean.basedriver.impl/${org.eclipse.smarthome.version}</bundle>
+    <!-- dependencies -->
+    <feature>eclipse-smarthome</feature>
+    <bundle dependency="true">mvn:org.osgi.service/enocean/1.0.0.201503061209</bundle>
+    <bundle dependency="true">mvn:org.bidib.com.neuronrobotics/nrjavaserial/3.9.3.1</bundle>
+  </feature>
+  <feature name="eclipse-smarthome-protocol-enocean-sample-client" version="${org.eclipse.smarthome.version}">
+    <!-- remove from final feature/move to sample feature -->
+    <bundle>mvn:org.eclipse.smarthome.protocols.enocean/org.eclipse.smarthome.protocols.enocean.sample.client/${org.eclipse.smarthome.version}</bundle>
+    <feature>eclipse-smarthome</feature>
+    <feature>eclipse-smarthome-protocol-enocean</feature>
+  </feature>
+</features>

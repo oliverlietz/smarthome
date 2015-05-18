@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="openhab" xmlns="http://karaf.apache.org/xmlns/features/v1.3.0">
+  <feature name="openhab" version="${org.openhab.version}">
+    <bundle>mvn:org.openhab.bundles.core/org.openhab.core/${org.openhab.version}</bundle>
+    <!-- dependencies -->
+    <feature>eclipse-smarthome</feature>
+    <feature>eclipse-smarthome-config-discovery</feature>
+  </feature>
+</features>
